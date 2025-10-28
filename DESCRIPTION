@@ -1,0 +1,26 @@
+Package: cdogmag22
+Type: Package
+Title: Replication of Central Dogma Group 22
+Version: 0.1.0
+Authors@R: c(
+    person(given = "Duco",
+           family = "Lam",
+           role = c("aut", "cre"), # There must be a "cre", but there can only be one
+           email = "s252126@student.dtu.dk"), 
+    person(given = "Benedek",
+           family = "Dunavolgyi",
+           role = "aut",
+           email = "s243161@@student.dtu.dk"), 
+    person(given = "Malte",
+           family = "Lau",
+           role = "aut",
+           email = "s224183@student.dtu.dk"), 
+    person(given = "Manuel",
+           family = "Charneca",
+           role = "aut",
+           email = "s253708@student.dtu.dk")
+  )
+Description: This package will create will replicate the central dogma of molecular biology 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
