@@ -5,6 +5,7 @@ vignette: >
   %\VignetteIndexEntry{group_22_package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  
 ---
 
 # About the package
@@ -20,12 +21,18 @@ The package depends on `ggplot2` and `stringr` packages for plotting the amino a
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width = 3.5,
+  fig.height = 2.5,
+  fig.align = "center"
 )
 ```
 
 ```{r setup}
+devtools::load_all()
 library("cdogmag22")
+options(bitmapType = "cairo")
+
 ```
 
 ## Functions:
