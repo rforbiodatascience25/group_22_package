@@ -20,7 +20,7 @@ Authors@R: c(
            role = "aut",
            email = "s253708@student.dtu.dk")
   )
-Description: This package will create will replicate the central dogma of molecular biology 
+Description: his package replicates the central dogma of molecular biology, providing functions to simulate DNA sequences and their transcription and translation. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
