@@ -2,15 +2,13 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+# About the package
 
----
-title: "group_22_package"
-vignette: >
-  %\VignetteIndexEntry{group_22_package}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
+The following package contains function which can be used to the extract the transcripted mRNA sequence from a DNA sequence. The package also contains amino acid codon data[^1], therefore the translated amino acid sequence can be obtained from the mRNA sequence. For testing or demonstration purposes, a random DNA sequence can also be generated using functions.
+
+[^1]: <https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi?chapter=tgencodes#SG1>
+
+The package depends on `ggplot2` and `stringr` packages for plotting the amino acid counts. While development, our group has tried to reduce the number of dependencies, so that the package works out-of-the-box, and also does not have any conflict with the namespace. Regardless, for integration the plotting function, the above-mentioned packages have to be loaded.
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -20,5 +18,51 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(cdogmag22)
+library("cdogmag22")
 ```
+
+## Functions:
+
+```{r}
+set.seed(22160)
+dna <- generate_dna_sequence(200)
+print(dna)
+```
+
+```{r}
+rna <- DNA_to_RNA(dna)
+print(rna)
+```
+
+```{r}
+codons <- codon(rna,
+                start = 1)
+print(codons)
+```
+
+```{r}
+amino <- codon_to_amino_acids(codons)
+print(amino)
+```
+
+```{r}
+plot_char_counts(amino)
+```
+
+## Pipe workflow:
+
+```{r}
+set.seed(22160)
+aminoplot <- generate_dna_sequence(200) |>
+  DNA_to_RNA() |>
+    codon(start = 1) |>
+      codon_to_amino_acids() |>
+        plot_char_counts()
+print(aminoplot)
+```
+
+## Use cases
+
+The package has good use cases for bioinformaticians translating DNA data into amino acid sequences or just having an easy function for obtaining transcripted mRNA. The package can also help investigating bias or differences in both the DNA and amino acid sequences.
+
+A useful addition would be to add the reverse translation, meaning implementing functions that take the amino acid sequence as an input and produce the corresponding DNA sequence.
