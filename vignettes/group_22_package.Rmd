@@ -9,7 +9,8 @@ vignette: >
 
 # About the package
 
-Link to repo: https://github.com/rforbiodatascience25/group_22_package
+Link to repo: <https://github.com/rforbiodatascience25/group_22_package>
+
 The following package contains function which can be used to the extract the transcripted mRNA sequence from a DNA sequence. The package also contains amino acid codon data[^1], therefore the translated amino acid sequence can be obtained from the mRNA sequence. For testing or demonstration purposes, a random DNA sequence can also be generated using functions.
 
 [^1]: <https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi?chapter=tgencodes#SG1>
